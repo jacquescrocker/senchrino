@@ -1,0 +1,21 @@
+
+sencha:
+  debug: false
+
+# version the client assets (increase this version on every production deploy)
+version: "0.0.7"
+
+pusher:
+  # to enable this, register an account on pusherapp.com
+  # - change enabled to "true"
+  # - paste in your app_id, key, and secret
+  enabled: false
+  app_id: XXXX
+  key: XXXX
+  secret: XXXX
+
+# sass settings
+sass:
+  :style: :expanded
+  :debug_info: true
+  :quiet: true

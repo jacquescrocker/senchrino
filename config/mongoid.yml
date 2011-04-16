@@ -1,0 +1,25 @@
+options: &options
+  parameterize_keys: false
+
+defaults: &defaults
+  host: localhost
+  # slaves:
+  #   - host: slave1.local
+  #     port: 27018
+  #   - host: slave2.local
+  #     port: 27019
+
+development:
+  <<: *defaults
+  <<: *options
+  database: awesomeapp
+
+test:
+  <<: *defaults
+  <<: *options
+  database: awesomeapp_test
+
+production:
+  <<: *options
+  uri: <%= ENV['MONGOID_URI'] %>
+  database: awesomeapp_production

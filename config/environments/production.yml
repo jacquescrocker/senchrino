@@ -1,0 +1,9 @@
+package_assets: true
+
+# use minimized version of sencha on prod environment
+sencha:
+  debug: false
+
+sass:
+  :style: :compressed
+  :debug_info: false

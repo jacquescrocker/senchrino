@@ -1,0 +1,22 @@
+package_path: "assets-compiled"
+
+compress_assets: off
+package_assets: <%= Settings.package_assets ? "on" : "off" %>
+
+javascripts:
+  app:
+    # pull in all jst templates from app-js/templates
+    - app-js/templates/**/*.jst
+
+    - public/javascripts/firebugx.js
+    - public/javascripts/underscore.js
+
+    - public/lib/touch/sencha-touch<%= "-debug" if Settings.sencha and Settings.sencha.debug %>.js
+
+    # include all compiled javascripts
+    - public/javascripts/compiled/**/*.js
+
+
+stylesheets:
+  app:
+    - public/stylesheets/application.css

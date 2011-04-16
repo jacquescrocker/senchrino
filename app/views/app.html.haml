@@ -1,0 +1,17 @@
+!!! html
+%html{html_attrs}
+  %head
+    %meta(http-equiv="Content-Type" content="text/html; charset=utf-8")
+    %meta(http-equiv="X-UA-Compatible" content="IE=edge,chrome=1")
+
+    %title Sencha App
+    = stylesheets(:app)
+    = javascripts(:app)
+
+    - if Settings.pusher.enabled
+      :erb
+        <script src="http://js.pusherapp.com/1.8/pusher.min.js"></script>
+      :javascript
+        window.pusher = new Pusher('#{Settings.pusher.key}')
+
+  %body
